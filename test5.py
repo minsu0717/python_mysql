@@ -1,14 +1,13 @@
 import mysql.connector
 from mysql.connector.errors import Error
 
+from mysql_connection import get_connection
+
 # 연결하는 코드
 # try 라고 나오면, 들여쓰기 되어있는 문장들을 싱행하라는 뜻.
 
 try :
-    connection = mysql.connector.connect(host='yhdb.ckrtxnsyzas7.ap-northeast-2.rds.amazonaws.com',
-        database = 'streamlit_db',
-        user = 'python_user',
-        password = '1234')    
+    connection = get_connection() 
 
     query = '''select * from test;'''
     
