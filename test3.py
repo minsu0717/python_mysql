@@ -1,12 +1,11 @@
 import mysql.connector
 from datetime import datetime
 
+from mysql_connection import get_connection
+
 try:
     # 1. db에 연결
-    connection = mysql.connector.connect(host='yhdb.ckrtxnsyzas7.ap-northeast-2.rds.amazonaws.com',
-        database = 'streamlit_db',
-        user = 'python_user',
-        password = '1234')
+    connection = get_connection()
     
     
     # date = '2021-12-15'
